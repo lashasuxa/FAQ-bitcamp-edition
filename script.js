@@ -36,7 +36,11 @@ let createFaqElement = (faq) => {
     //this if statement adds hidden to the data.json data, we can handle number or queuing of open FAQs by changing data collapsed values
     paragraphElement.classList.add("hidden");
   }
+
   faqElement.addEventListener("click", (event) => {
+    Array.from(document.querySelectorAll("li")).map((element) => {
+      element.querySelector("p").classList.add("hidden");
+    });
     paragraphElement.classList.toggle("hidden");
   });
 };
